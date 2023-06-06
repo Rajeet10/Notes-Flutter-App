@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +15,10 @@ void main() {
       primarySwatch: Colors.blue,
     ),
     home: const HomePage(),
+    routes: {
+      '/login': (context) => const LoginView(),
+      '/register': (context) => const RegisterView(),
+    },
     debugShowCheckedModeBanner: false,
   ));
 }
@@ -42,7 +48,7 @@ class HomePage extends StatelessWidget {
               //   return const VerifyEmailView();
               // }
               // return const Text('Done');
-              return LoginView();
+              return const LoginView();
             default:
               return const Text('loading...');
           }
