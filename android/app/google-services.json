@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "653589294288",
+    "project_id": "notemaker-1d590",
+    "storage_bucket": "notemaker-1d590.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653589294288:android:2e89d70b380b921dfac2d5",
+        "android_client_info": {
+          "package_name": "com.example.sample"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkQgF23G-WxaU_bjtiM-yA-4CPRLu5_T0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
