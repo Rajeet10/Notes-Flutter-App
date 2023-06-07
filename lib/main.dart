@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +20,7 @@ void main() {
     routes: {
       '/login': (context) => const LoginView(),
       '/register': (context) => const RegisterView(),
+      '/notes/': (context) => const NotesView(),
     },
     debugShowCheckedModeBanner: false,
   ));
@@ -85,7 +88,7 @@ class _NotesViewState extends State<NotesView> {
                     Navigator.of(context)
                         .pushNamedAndRemoveUntil('/login', (_) => false);
                   }
-                  print(shouldLogout.toString());
+                  devtools.log(shouldLogout.toString());
                   break;
               }
             },
