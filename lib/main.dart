@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +5,7 @@ import 'package:sample/firebase_options.dart';
 import 'package:sample/views/login_view.dart';
 import 'package:sample/views/register_view.dart';
 import 'package:sample/views/verify_email_view.dart';
+import 'dart:developer' as devtools show log;
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -59,6 +58,8 @@ class HomePage extends StatelessWidget {
   }
 }
 
+enum MenuAction { logout }
+
 class NotesView extends StatefulWidget {
   const NotesView({super.key});
 
@@ -70,7 +71,24 @@ class _NotesViewState extends State<NotesView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Main UI')),
+      appBar: AppBar(
+        title: const Text('Main UI'),
+        actions: [
+          PopupMenuButton<MenuAction>(
+            onSelected: (value) {
+              print(value);
+            },
+            itemBuilder: (context) {
+              return const [
+                PopupMenuItem<MenuAction>(
+                  value: MenuAction.logout,
+                  child: Text('Log out'),
+                ),
+              ];
+            },
+          ),
+        ],
+      ),
       body: const Text("hello world"),
     );
   }
